@@ -15,7 +15,7 @@ input {
     border: none;
     border-radius: 1000px;
     box-shadow: 0 0 10px var(--segundo);
-    font-size: calc(10px + 1.5vw);
+    font-size: calc(15px + .5vw);
     transition: box-shadow 0.3s ease;
 }
 
