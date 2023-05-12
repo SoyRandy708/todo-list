@@ -17,6 +17,8 @@ li {
 }
 
 span {
+    font-family: var(--texto);
+    font-weight: bolder;
     font-size: calc(10px + 1.5vw);
     cursor: pointer;
     transition: color 0.3s ease;

@@ -1,9 +1,9 @@
+import React from 'react';
 import { TodoCounter } from './components/todoCounter/TodoCounter';
 import { TodoSearch } from './components/todoSearch/TodoSearch';
 import { TodoList } from './components/todoList/TodoList';
 import { TodoItem } from './components/todoItem/TodoItem';
 import { CreateTodoButton } from './components/createTodoButton/CreateTodoButton';
-import React from 'react';
 
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: true },
@@ -13,10 +13,22 @@ const defaultTodos = [
 ];
 
 function App() {
+  const [searchValue, setSearchValue] = React.useState("")
+  const [todos, setTodos] = React.useState(defaultTodos)
+
+  const completedTodos = todos.filter(todo => todo.completed).length
+  const totalTodos = todos.length
+  
   return (
     <React.Fragment>
-      <TodoCounter completed={16} total={25} />
-      <TodoSearch />
+      <TodoCounter 
+        completed={completedTodos} 
+        total={totalTodos} /
+      >
+      <TodoSearch 
+        searchValue = {searchValue}
+        setSearchValue={setSearchValue}
+      />
 
       <TodoList>
         {defaultTodos.map(todo => (

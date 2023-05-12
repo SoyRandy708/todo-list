@@ -2,7 +2,13 @@ import "./CreateTodoButton.css"
 
 function CreateTodoButton() {
   return (
-    <button>+</button>
+    <button
+    onClick={
+      (evento) => {
+        console.log("Hola")
+        console.log(evento.target)
+      }} 
+    >+</button>
   );
 }
 
