@@ -17,11 +17,20 @@ button {
     border-radius: 50%;
     background-color: var(--tercero);  
     box-shadow: 0 0 10px var(--segundo); 
-    font-size: 48px;
-    font-weight: bold;
     color: var(--primero);
     cursor: pointer;
     transition: transform 1s ease, box-shadow 1s ease;
+}
+
+button .icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 40px;
+    color: var(--primero)
 }
 
 button:hover {

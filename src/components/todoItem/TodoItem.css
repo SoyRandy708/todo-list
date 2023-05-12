@@ -16,10 +16,9 @@ li {
     box-shadow: 0 0 10px var(--segundo);
 }
 
-span {
-    font-family: var(--texto);
-    font-weight: bolder;
-    font-size: calc(10px + 1.5vw);
+.icon {
+    font-size: 30px;
+    padding: 10px;
     cursor: pointer;
     transition: color 0.3s ease;
 }

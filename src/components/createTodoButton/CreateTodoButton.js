@@ -1,4 +1,5 @@
 import "./CreateTodoButton.css"
+import { FaPlus } from "react-icons/fa"
 
 function CreateTodoButton() {
   return (
@@ -8,7 +9,11 @@ function CreateTodoButton() {
         console.log("Hola")
         console.log(evento.target)
       }} 
-    >+</button>
+    >
+      <FaPlus 
+        className="icon"
+      />
+    </button>
   );
 }
 
