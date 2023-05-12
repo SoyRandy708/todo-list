@@ -1,0 +1,25 @@
+:root {
+    --primero: #F6F1F1;
+    --segundo: #AFD3E2;
+    --tercero: #19A7CE;
+    --cuarto: #146C94;
+    --quinto: #0f0202;
+    --texto: 'Lato', sans-serif;
+}
+
+input {
+    display: block;
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 0 0 10px var(--segundo);
+    font-size: calc(10px + 1.5vw);
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 30px var(--tercero);
+}

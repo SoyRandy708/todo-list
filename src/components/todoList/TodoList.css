@@ -7,9 +7,10 @@
     --texto: 'Lato', sans-serif;
 }
 
-body {
-    margin: 0 auto;
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 0;
-    background-color: var(--primero);
-    max-width: 600px;
+    margin: 10px;
 }

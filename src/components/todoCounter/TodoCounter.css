@@ -7,9 +7,9 @@
     --texto: 'Lato', sans-serif;
 }
 
-body {
-    margin: 0 auto;
-    padding: 0;
-    background-color: var(--primero);
-    max-width: 600px;
+h1 {
+    font-family: var(--texto);
+    font-size: calc(10px + 2vw);
+    color: var(--cuarto);
+    text-align: center;
 }
