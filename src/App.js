@@ -18,12 +18,30 @@ function App() {
 
   const completedTodos = todos.filter(todo => todo.completed).length
   const totalTodos = todos.length
-  
+
   const searchedTodos = todos.filter(todo => { 
     const todoText = todo.text.toLocaleLowerCase()
     const searchText = searchValue.toLowerCase()
     return todoText.includes(searchText)
   })
+
+  const completeTodo = ({text, completed}) => {
+    const newTodos = [...todos]
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    )
+    newTodos[todoIndex].completed = !completed
+    setTodos(newTodos)
+  }
+
+  const deleteTodo = ({text}) => {
+    const newTodos = [...todos]
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    )
+    newTodos.splice(todoIndex, 1)
+    setTodos(newTodos)
+  }
   
   return (
     <React.Fragment>
@@ -42,6 +60,8 @@ function App() {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            onComplete={() => completeTodo(todo)}
+            onDelete={() => deleteTodo(todo)}
           />
         ))}
       </TodoList>
