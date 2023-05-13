@@ -1,0 +1,8 @@
+@use "./global" as *;
+
+h1 {
+    font-family: $texto;
+    font-size: calc(10px + 2vw);
+    color: $cuarto;
+    text-align: center;
+}

@@ -1,9 +1,9 @@
-import "./CreateTodoButton.css"
 import { FaPlus } from "react-icons/fa"
 
 function CreateTodoButton() {
   return (
     <button
+    className={"newTodo"}
     onClick={
       (evento) => {
         console.log("Hola")

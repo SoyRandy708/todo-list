@@ -1,0 +1,17 @@
+$primero: #F6F1F1;
+$segundo: #AFD3E2;
+$tercero: #19A7CE;
+$cuarto: #146C94;
+$quinto: #0f0202;
+$texto: 'Lato', sans-serif;
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    background-color: var(--primero);
+    max-width: 600px;
+}
+
+* {
+    box-sizing: border-box;
+}

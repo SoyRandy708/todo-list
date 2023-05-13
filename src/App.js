@@ -12,7 +12,7 @@ const defaultTodos = [
   { text: 'LALALALALA', completed: true },
 ];
 
-function App() {
+export function App() {
   const [searchValue, setSearchValue] = React.useState("")
   const [todos, setTodos] = React.useState(defaultTodos)
 
@@ -70,5 +70,3 @@ function App() {
     </React.Fragment>
   );
 }
-
-export default App;
