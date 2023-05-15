@@ -1,7 +1,7 @@
 @use "./global";
-@use "./TodoCounter";
-@use "./TodoSearch";
-@use "./TodoList";
-@use "./TodoItem";
-@use "./CreateTodoButton";
+@use "../components/todoCounter/TodoCounter";
+@use "../components/todoSearch/TodoSearch";
+@use "../components/todoList/TodoList";
+@use "../components/todoItem/TodoItem";
+@use "../components/createTodoButton/CreateTodoButton";
 
