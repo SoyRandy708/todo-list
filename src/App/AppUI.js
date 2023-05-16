@@ -13,6 +13,8 @@ export function AppUI({
     completedTodos,
     completeTodo,
     deleteTodo,
+    loading,
+    error,
 }) {
     return (
         <React.Fragment>
@@ -26,15 +28,19 @@ export function AppUI({
             />
     
             <TodoList>
-            {searchedTodos.map(todo => (
-                <TodoItem
-                key={todo.text}
-                text={todo.text}
-                completed={todo.completed}
-                onComplete={() => completeTodo(todo)}
-                onDelete={() => deleteTodo(todo)}
-                />
-            ))}
+                {loading && <p>Estamos cargando...</p>}
+                {error && <p>Hubo un error...</p>}
+                {(!loading && searchedTodos.length < 1) && <p>!Has tu primer ToDo¡</p>}
+
+                {searchedTodos.map(todo => (
+                    <TodoItem
+                    key={todo.text}
+                    text={todo.text}
+                    completed={todo.completed}
+                    onComplete={() => completeTodo(todo)}
+                    onDelete={() => deleteTodo(todo)}
+                    />
+                ))}
             </TodoList>
 
             <CreateTodoButton />

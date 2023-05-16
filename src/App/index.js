@@ -13,7 +13,12 @@ import { AppUI } from './AppUI';
 
 export function App() {
   const [searchValue, setSearchValue] = React.useState("")
-  const [todos, saveTodos] = useLocaStorage("TODOS_V1", [])
+  const {
+    item: todos, 
+    saveItem: saveTodos,
+    loading,
+    error,
+  } = useLocaStorage("TODOS_V1", [])
 
   const completedTodos = todos.filter(todo => todo.completed).length
   const totalTodos = todos.length
@@ -51,6 +56,8 @@ export function App() {
       completedTodos={completedTodos}
       completeTodo={completeTodo}
       deleteTodo={deleteTodo}
+      loading={loading}
+      error={error}
     />
   )
 }
