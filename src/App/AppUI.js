@@ -1,9 +1,9 @@
 import React from 'react';
-import { TodoCounter } from '../components/todoCounter/TodoCounter';
-import { TodoSearch } from '../components/todoSearch/TodoSearch';
-import { TodoList } from '../components/todoList/TodoList';
-import { TodoItem } from '../components/todoItem/TodoItem';
-import { CreateTodoButton } from '../components/createTodoButton/CreateTodoButton';
+import { TodoCounter } from '../components/TodoCounter';
+import { TodoSearch } from '../components/TodoSearch';
+import { TodoList } from '../components/TodoList';
+import { TodoItem } from '../components/TodoItem';
+import { CreateTodoButton } from '../components/CreateTodoButton';
 
 export function AppUI({
     totalTodos,
