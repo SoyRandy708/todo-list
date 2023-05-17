@@ -1,15 +1,7 @@
 @use "../../scss/global" as *;
-
-// div {
-//     gap: 10px;  
-//     width: 500px;
-//     height: 200px;
-//     background-color: black;
-// }
-
 $color-opacity: #abccd7;
 
-div {
+.loading-Todo {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     place-items: center;

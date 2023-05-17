@@ -1,6 +1,6 @@
 export function TodosLoading() {
     return (
-        <div>
+        <div className="loading-Todo">
             <span></span>
             <p></p>
             <span></span>

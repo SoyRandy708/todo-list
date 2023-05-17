@@ -1,7 +1,9 @@
 export function TodosError() {
     return (
-        <>
-            <p>Error...</p>
-        </>
+        <div className="error-Todo">
+            <span></span>
+            <p>Ocurrio un error, vuelva a intentar mas tarde</p>
+            <span></span>
+        </div>
     )
 }
