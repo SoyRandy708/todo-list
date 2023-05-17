@@ -38,7 +38,6 @@ export function AppUI({
                         <TodosLoading />
                     </>
                 )}
-                {/* HAS ANIMACIONES PARA EL ESTADO DE ERROR Y CARGA */}
                 {error && <TodosError />}
                 {(!loading && searchedTodos.length < 1) && <TodosEmpty />}
 
