@@ -1,0 +1,36 @@
+@use "../../scss/global" as *;
+
+// div {
+//     gap: 10px;  
+//     width: 500px;
+//     height: 200px;
+//     background-color: black;
+// }
+
+$color-opacity: #abccd7;
+
+div {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    place-items: center;
+    gap: 20px;
+    border: 3px solid $color-opacity;
+    box-shadow: 0 0 10px $color-opacity;
+    border-radius: 100px;
+    background-color: $color-opacity;
+    animation: 0.5s cargando ease infinite alternate;
+    opacity: 0.5;
+
+    span {
+        padding: 32.5px;
+    }
+}
+
+@keyframes cargando {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
