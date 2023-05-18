@@ -1,4 +1,12 @@
-function TodoSearch({ searchValue, setSearchValue }) {
+import React from "react";
+import { TodoContext } from "../../context";
+
+export function TodoSearch() {
+  const {
+    searchValue, 
+    setSearchValue
+  } = React.useContext(TodoContext)
+
   return (
     <input 
       placeholder="Cortar cebolla"
@@ -8,5 +16,3 @@ function TodoSearch({ searchValue, setSearchValue }) {
     />
   );
 }
-
-export { TodoSearch };
