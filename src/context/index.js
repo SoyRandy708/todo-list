@@ -5,6 +5,9 @@ const TodoContext = React.createContext()
 
 function TodoProvider({ children }) {
     const [searchValue, setSearchValue] = React.useState("")
+
+    const [openModal, setOpenModal] = React.useState(false)
+
     const {
         item: todos, 
         saveItem: saveTodos,
@@ -13,6 +16,7 @@ function TodoProvider({ children }) {
     } = useLocaStorage("TODOS_V1", [])
 
     const completedTodos = todos.filter(todo => todo.completed).length
+
     const totalTodos = todos.length
     
     const searchedTodos = todos.filter(todo => { 
@@ -30,7 +34,7 @@ function TodoProvider({ children }) {
         saveTodos(newTodos)
     }
     
-        const deleteTodo = ({text}) => {
+    const deleteTodo = ({text}) => {
         const newTodos = [...todos]
         const todoIndex = newTodos.findIndex(
             (todo) => todo.text === text
@@ -38,12 +42,15 @@ function TodoProvider({ children }) {
         newTodos.splice(todoIndex, 1)
         saveTodos(newTodos)
     }
+
     return (
         <TodoContext.Provider value={{
-            totalTodos,
-            searchedTodos,
             setSearchValue,
             searchValue,
+            setOpenModal,
+            openModal,
+            totalTodos,
+            searchedTodos,
             completedTodos,
             completeTodo,
             deleteTodo,
