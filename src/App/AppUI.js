@@ -9,6 +9,7 @@ import { TodosLoading } from '../components/TodosLoading';
 import { TodosError } from '../components/TodosError';
 import { TodosEmpty } from '../components/TodosEmpty';
 import { Modal } from '../components/Modal';
+import { TodoForm } from '../components/TodoForm';
 
 export function AppUI() {
     const {
@@ -50,7 +51,9 @@ export function AppUI() {
             <CreateTodoButton />
             
             {openModal && (
-                <Modal></Modal>
+                <Modal>
+                    <TodoForm />
+                </Modal>
             )}
 
         </React.Fragment>

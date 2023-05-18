@@ -1,7 +1,13 @@
 @use "../../scss/global" as *;
 
 .modal {
-    width: 100px;
-    height: 100px;
-    background-color: red;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(155, 164, 177, .6);
 }

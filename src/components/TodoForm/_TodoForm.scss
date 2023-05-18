@@ -1,0 +1,57 @@
+@use "../../scss/global" as *;
+
+.TodoForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    min-width: 300px;
+    height: 50%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: $primero;
+    color: $quinto;
+    font-size: calc(15px + 0.5vw);
+    font-family: $texto;
+
+    &__label {
+        font-weight: bold;
+        margin: 10px;
+    }
+
+    &__textarea {
+        width: 80%;
+        height: 150px;
+        margin: 10px;
+        padding: 10px;
+        resize: none;
+        text-align: center;
+        font-size: calc(15px + 0.5vw);
+        font-family: $texto;
+        border: 3px solid #767676;
+
+        &:focus {
+            outline: none;
+            border: 3px solid $tercero;
+        }
+    }
+
+    &__button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        font-weight: bold;
+        font-size: calc(15px + 0.5vw);
+        font-family: $texto;
+        cursor: pointer;
+
+        &--cancel {
+            background-color: transparent;
+        }
+
+        &--add {
+            background-color: #50e5eb;
+        }
+    }
+}
