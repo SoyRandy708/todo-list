@@ -43,6 +43,15 @@ function TodoProvider({ children }) {
         saveTodos(newTodos)
     }
 
+    const addTodo = (text) => {
+        const newTodos = [...todos]
+        newTodos.push({
+            text,
+            completed: false,
+        })
+        saveTodos(newTodos)
+    }
+
     return (
         <TodoContext.Provider value={{
             setSearchValue,
@@ -54,6 +63,7 @@ function TodoProvider({ children }) {
             completedTodos,
             completeTodo,
             deleteTodo,
+            addTodo,
             loading,
             error,
         }}>

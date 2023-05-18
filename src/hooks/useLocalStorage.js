@@ -44,11 +44,3 @@ export function useLocaStorage(itemName, initialValue) {
     error
   };
 }
-
-// const defaultTodos = [
-//   { text: 'Cortar cebolla', completed: true },
-//   { text: 'Tomar el Curso de Intro a React.js', completed: false },
-//   { text: 'Llorar con la Llorona', completed: false },
-//   { text: 'LALALALALA', completed: true },
-// ]
-// localStorage.setItem("TODOS_V1", defaultTodos)
