@@ -3,8 +3,8 @@
 .newTodo {
     position: fixed;
     z-index: 10;
-    bottom: 50px;
-    right: 50px;
+    bottom: 25px;
+    right: 25px;
     width: 75px;
     height: 75px;
     border: none;
@@ -13,13 +13,14 @@
     box-shadow: 0 0 10px $segundo; 
     color: $primero;
     cursor: pointer;
-    transition: transform 1s ease, box-shadow 1s ease;
+    transition: transform .5s ease, box-shadow .5s ease;
     
     &:hover {
         box-shadow: 0 0 30px $tercero;
-        transform: rotate(270deg);
+        transform: rotate(225deg);
     }
 
+    
     .icon {
         position: absolute;
         top: 0;
@@ -30,6 +31,10 @@
         font-size: 40px;
         color: $primero
     }
+}
+.activo {
+    box-shadow: 0 0 30px $tercero;
+    transform: rotate(225deg);
 }
 
 

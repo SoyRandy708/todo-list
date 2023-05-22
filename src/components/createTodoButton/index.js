@@ -6,16 +6,23 @@ function CreateTodoButton() {
     const {
         setOpenModal,
         openModal,
-    } = React.useContext(TodoContext)
+        setIsActive,
+        isActive,
+    } = React.useContext(TodoContext)    
+    
+    const changeState = () => {
+        setOpenModal(!openModal)
+        setIsActive(!isActive)
+    }
 
     return (
         <button
-            className={"newTodo"}
-            onClick={() => setOpenModal(!openModal)} 
-        >
-        <FaPlus 
-            className="icon"
-        />
+            className={`newTodo ${isActive ? "activo" : ""}`}
+            onClick={changeState} 
+            >
+            <FaPlus 
+                className="icon"
+            />
         </button>
     );
 }

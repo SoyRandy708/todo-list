@@ -8,6 +8,8 @@ function TodoProvider({ children }) {
 
     const [openModal, setOpenModal] = React.useState(false)
 
+    const [isActive, setIsActive] = React.useState(false)
+
     const {
         item: todos, 
         saveItem: saveTodos,
@@ -58,6 +60,8 @@ function TodoProvider({ children }) {
             searchValue,
             setOpenModal,
             openModal,
+            setIsActive,
+            isActive,
             totalTodos,
             searchedTodos,
             completedTodos,
