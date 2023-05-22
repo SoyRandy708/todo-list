@@ -8,6 +8,7 @@ import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodosLoading } from '../components/TodosLoading';
 import { TodosError } from '../components/TodosError';
 import { TodosEmpty } from '../components/TodosEmpty';
+import { TodosMatches } from '../components/TodosMatches';
 import { Modal } from '../components/Modal';
 import { TodoForm } from '../components/TodoForm';
 
@@ -19,6 +20,7 @@ export function AppUI() {
         loading,
         error,
         openModal,
+        totalTodos
     } = React.useContext(TodoContext)
 
     return (
@@ -35,7 +37,8 @@ export function AppUI() {
                     </>
                 )}
                 {error && <TodosError />}
-                {(!loading && searchedTodos.length < 1) && <TodosEmpty />}
+                {(!loading && totalTodos < 1) && <TodosEmpty />}
+                {(!loading && totalTodos > 0 && searchedTodos.length < 1) && <TodosMatches />}
 
                 {searchedTodos.map(todo => (
                     <TodoItem
