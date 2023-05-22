@@ -2,7 +2,8 @@
 
 h1 {
     font-family: $texto;
-    font-size: calc(10px + 2vw);
+    font-size: calc(10px + 1.5vw);
+    white-space: nowrap;
     color: $cuarto;
     text-align: center;
 }
