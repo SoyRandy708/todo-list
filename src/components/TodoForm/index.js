@@ -12,6 +12,11 @@ export function TodoForm() {
 
     const onSubmit = (evento) => {
         evento.preventDefault()
+
+        if (newTodoValue.trim() === "") {
+            return
+        }
+
         addTodo(newTodoValue)
         setOpenModal(false)
         setIsActive(false)
