@@ -20,3 +20,14 @@ body {
 * {
     box-sizing: border-box;
 }
+
+@mixin ToDo($color, $color2, $color3) {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    place-items: center;
+    gap: 20px;
+    background-color: $color;
+    border: 3px solid $color2;
+    border-radius: 100px;
+    box-shadow: 0 0 10px $color3;
+}

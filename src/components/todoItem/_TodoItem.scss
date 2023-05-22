@@ -1,12 +1,7 @@
 @use "../../scss/global" as *;
 
 .tarea {
-    display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    place-items: center;
-    gap: 20px;
-    border: 3px solid $tercero;
-    border-radius: 100px;
+    @include ToDo(transparent, $tercero, $segundo);
     box-shadow: 0 0 20px $segundo;
 
     .icon {
