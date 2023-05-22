@@ -1,15 +1,14 @@
 @use "../../scss/global" as *;
-$color-opacity: #a3ed67;
 
 .empty-Todo {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     place-items: center;
     gap: 20px;
-    border: 3px solid $color-opacity;
-    box-shadow: 0 0 10px $color-opacity;
+    border: 3px solid $empty;
+    box-shadow: 0 0 10px $empty;
     border-radius: 100px;
-    background-color: $color-opacity;
+    background-color: $empty;
 
     span {
         padding: 32.5px;

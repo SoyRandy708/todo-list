@@ -1,15 +1,14 @@
 @use "../../scss/global" as *;
-$color-opacity: #ff6739;
 
 .error-Todo {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     place-items: center;
     gap: 20px;
-    border: 3px solid $color-opacity;
-    box-shadow: 0 0 10px $color-opacity;
+    border: 3px solid $error;
+    box-shadow: 0 0 10px $error;
     border-radius: 100px;
-    background-color: $color-opacity;
+    background-color: $error;
 
     span {
         padding: 32.5px;
