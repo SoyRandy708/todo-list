@@ -5,10 +5,7 @@ const TodoContext = React.createContext()
 
 function TodoProvider({ children }) {
     const [searchValue, setSearchValue] = React.useState("")
-
     const [openModal, setOpenModal] = React.useState(false)
-
-    const [isActive, setIsActive] = React.useState(false)
 
     const {
         item: todos, 
@@ -60,8 +57,6 @@ function TodoProvider({ children }) {
             searchValue,
             setOpenModal,
             openModal,
-            setIsActive,
-            isActive,
             totalTodos,
             searchedTodos,
             completedTodos,

@@ -5,7 +5,6 @@ export function TodoForm() {
     const {
         setOpenModal,
         addTodo,
-        setIsActive,
     } = React.useContext(TodoContext)
 
     const [newTodoValue, setNewTodoValue] = React.useState("")
@@ -19,12 +18,10 @@ export function TodoForm() {
 
         addTodo(newTodoValue)
         setOpenModal(false)
-        setIsActive(false)
     }
 
     const onCancel = () => {
         setOpenModal(false)
-        setIsActive(false)
     }
     
     const onChange = (evento) => {
