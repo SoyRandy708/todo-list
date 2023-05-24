@@ -6,6 +6,9 @@ const TodoContext = React.createContext()
 function TodoProvider({ children }) {
     const [searchValue, setSearchValue] = React.useState("")
     const [openModal, setOpenModal] = React.useState(false)
+    const [openForm, setOpenForm] = React.useState(false)
+    const [mensaje, setMensaje] = React.useState(false)
+    const [mensajeTexto, setMensajeTexto] = React.useState("")
 
     const {
         item: todos, 
@@ -57,6 +60,12 @@ function TodoProvider({ children }) {
             searchValue,
             setOpenModal,
             openModal,
+            setOpenForm,
+            openForm,
+            setMensaje,
+            mensaje,
+            setMensajeTexto,
+            mensajeTexto,
             totalTodos,
             searchedTodos,
             completedTodos,

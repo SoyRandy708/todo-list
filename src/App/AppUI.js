@@ -11,16 +11,17 @@ import { TodosEmpty } from '../components/TodosEmpty';
 import { TodosMatches } from '../components/TodosMatches';
 import { Modal } from '../components/Modal';
 import { TodoForm } from '../components/TodoForm';
+import { Mensaje } from '../components/Mensaje';
 
 export function AppUI() {
     const {
+        totalTodos,
         searchedTodos,
         completeTodo,
         deleteTodo,
         loading,
         error,
-        openModal,
-        totalTodos
+        openForm,
     } = React.useContext(TodoContext)
 
     return (
@@ -53,9 +54,10 @@ export function AppUI() {
 
             <CreateTodoButton />
             
-            {openModal && (
+            {openForm && (
                 <Modal>
                     <TodoForm />
+                    <Mensaje />
                 </Modal>
             )}
 

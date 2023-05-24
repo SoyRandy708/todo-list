@@ -6,10 +6,13 @@ function CreateTodoButton() {
     const {
         setOpenModal,
         openModal,
+        setOpenForm,
+        openForm,
     } = React.useContext(TodoContext)    
     
     const changeState = () => {
         setOpenModal(!openModal)
+        setOpenForm(!openForm)
     }
 
     return (

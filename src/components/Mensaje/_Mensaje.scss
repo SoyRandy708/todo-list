@@ -1,0 +1,29 @@
+@use "../../scss/global" as *;
+
+.mensaje {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 10;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: clamp(200px, 50%, 400px);
+    height: auto;
+    border-radius: 100px;
+    background-color: $tercero;
+    transition: transform .5s ease;
+
+    p {
+        text-align: center;
+        font-family: $texto;
+        font-size: calc(15px + 1vw);
+        color: black;
+    }
+}
+
+.mostrar {
+    transform: translateY(-110px);
+}

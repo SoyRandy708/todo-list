@@ -3,7 +3,10 @@ import { TodoContext } from "../../context"
 
 export function TodoForm() {
     const {
+        setOpenForm,
         setOpenModal,
+        setMensaje,
+        setMensajeTexto,
         addTodo,
     } = React.useContext(TodoContext)
 
@@ -13,15 +16,19 @@ export function TodoForm() {
         evento.preventDefault()
 
         if (newTodoValue.trim() === "") {
+            setMensaje(true)
+            setMensajeTexto("No se pueden crear ToDo's vacíos")
             return
         }
 
         addTodo(newTodoValue)
         setOpenModal(false)
+        setOpenForm(false)
     }
 
     const onCancel = () => {
         setOpenModal(false)
+        setOpenForm(false)
     }
     
     const onChange = (evento) => {
