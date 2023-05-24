@@ -8,16 +8,28 @@ export function TodoForm() {
         setMensaje,
         setMensajeTexto,
         addTodo,
+        todos,
     } = React.useContext(TodoContext)
 
     const [newTodoValue, setNewTodoValue] = React.useState("")
-
+    
     const onSubmit = (evento) => {
         evento.preventDefault()
-
+        
         if (newTodoValue.trim() === "") {
             setMensaje(true)
             setMensajeTexto("No se pueden crear ToDo's vacíos")
+            return
+        }
+
+        const newTodos = [...todos]
+        const todoExist = newTodos.some((todo) => 
+            todo.text.trim() === newTodoValue.trim()
+        )
+        
+        if(todoExist) {
+            setMensaje(true)
+            setMensajeTexto("No se pueden crear ToDo's duplicados")
             return
         }
 

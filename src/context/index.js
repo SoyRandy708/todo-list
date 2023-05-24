@@ -66,6 +66,7 @@ function TodoProvider({ children }) {
             mensaje,
             setMensajeTexto,
             mensajeTexto,
+            todos,
             totalTodos,
             searchedTodos,
             completedTodos,
