@@ -11,12 +11,15 @@ export function TodoForm() {
         todos,
     } = React.useContext(TodoContext)
 
-    const [newTodoValue, setNewTodoValue] = React.useState("")
+    const [newTodo, setNewTodo] = React.useState({
+        title: "",
+        description: "",
+    })
     
     const onSubmit = (evento) => {
         evento.preventDefault()
         
-        if (newTodoValue.trim() === "") {
+        if (newTodo.title.trim() === "") {
             setMensaje(true)
             setMensajeTexto("No se pueden crear ToDo's vacíos")
             return
@@ -24,7 +27,7 @@ export function TodoForm() {
 
         const newTodos = [...todos]
         const todoExist = newTodos.some((todo) => 
-            todo.text.trim() === newTodoValue.trim()
+            todo.title.trim() === newTodo.title.trim()
         )
         
         if(todoExist) {
@@ -33,7 +36,7 @@ export function TodoForm() {
             return
         }
 
-        addTodo(newTodoValue)
+        addTodo(newTodo)
         setOpenModal(false)
         setOpenForm(false)
     }
@@ -44,7 +47,10 @@ export function TodoForm() {
     }
     
     const onChange = (evento) => {
-        setNewTodoValue(evento.target.value)
+        setNewTodo({
+            ...newTodo,
+            [evento.target.name]: evento.target.value
+        })
     }
 
     return (
@@ -54,9 +60,19 @@ export function TodoForm() {
         >
             <label className="TodoForm__label">Escribe tu nuevo ToDo</label>
 
+            <input 
+                className="TodoForm__input"
+                placeholder="Agrega un titulo a tu ToDo"
+                name="title"
+                value={newTodo.title}
+                onChange={onChange}
+            />
+
             <textarea 
-                className="TodoForm__textarea" placeholder="Lavar la ropa"
-                value={newTodoValue}
+                className="TodoForm__textarea" 
+                placeholder="Descripcion (Opcional)"
+                name="description"
+                value={newTodo.description}
                 onChange={onChange}
             />
 

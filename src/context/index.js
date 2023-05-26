@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocaStorage } from '../hooks/useLocalStorage';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const TodoContext = React.createContext()
 
@@ -11,44 +11,45 @@ function TodoProvider({ children }) {
     const [mensajeTexto, setMensajeTexto] = React.useState("")
 
     const {
-        item: todos, 
+        item: todos,
         saveItem: saveTodos,
         loading,
         error,
-    } = useLocaStorage("TODOS_V1", [])
+    } = useLocalStorage("TODOS_V1", [])
 
     const completedTodos = todos.filter(todo => todo.completed).length
 
     const totalTodos = todos.length
     
     const searchedTodos = todos.filter(todo => { 
-        const todoText = todo.text.toLocaleLowerCase()
+        const todoText = todo.title.toLocaleLowerCase()
         const searchText = searchValue.toLowerCase()
         return todoText.includes(searchText)
     })
     
-    const completeTodo = ({text, completed}) => {
+    const completeTodo = ({title, completed}) => {
         const newTodos = [...todos]
         const todoIndex = newTodos.findIndex(
-            (todo) => todo.text === text
+            (todo) => todo.title === title
         )
         newTodos[todoIndex].completed = !completed
         saveTodos(newTodos)
     }
     
-    const deleteTodo = ({text}) => {
+    const deleteTodo = ({title}) => {
         const newTodos = [...todos]
         const todoIndex = newTodos.findIndex(
-            (todo) => todo.text === text
+            (todo) => todo.title === title
         )
         newTodos.splice(todoIndex, 1)
         saveTodos(newTodos)
     }
 
-    const addTodo = (text) => {
+    const addTodo = ({title, description}) => {
         const newTodos = [...todos]
         newTodos.push({
-            text,
+            title,
+            description,
             completed: false,
         })
         saveTodos(newTodos)

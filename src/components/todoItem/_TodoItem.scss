@@ -2,6 +2,7 @@
 
 .tarea {
     @include ToDo(transparent, $tercero, $segundo);
+    grid-template-columns: 50px 30px 1fr 50px;
     box-shadow: 0 0 20px $segundo;
 
     .icon {

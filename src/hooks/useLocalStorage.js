@@ -2,7 +2,7 @@ import React from "react";
 /* eslint-disable react-hooks/exhaustive-deps */
 
 
-export function useLocaStorage(itemName, initialValue) {
+export function useLocalStorage(itemName, initialValue) {
   const [item, setItem] = React.useState(initialValue);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);

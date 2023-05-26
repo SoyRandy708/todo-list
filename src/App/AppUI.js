@@ -43,8 +43,9 @@ export function AppUI() {
 
                 {searchedTodos.map(todo => (
                     <TodoItem
-                        key={todo.text}
-                        text={todo.text}
+                        key={todo.title}
+                        title={todo.title}
+                        description={todo.description}
                         completed={todo.completed}
                         onComplete={() => completeTodo(todo)}
                         onDelete={() => deleteTodo(todo)}

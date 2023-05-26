@@ -1,4 +1,4 @@
-import { AiFillDelete } from "react-icons/ai"
+import { AiFillDelete, AiFillFileText } from "react-icons/ai"
 import { FaCheck } from "react-icons/fa"
 
 function TodoItem(props) {
@@ -10,9 +10,14 @@ function TodoItem(props) {
         className={`icon ${props.completed ? "icon-active" : ""}`}
         onClick={props.onComplete}
       />
+      <AiFillFileText 
+        className={`icon ${props.completed ? "icon-active" : ""}`}
+        onClick={props.onComplete}
+      />
       <p
         className={"texto"}
-      >{props.text}</p>
+      >{props.title}</p>
+
       <AiFillDelete 
         className={"icon icon-delete"}
         onClick={props.onDelete}
