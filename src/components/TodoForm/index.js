@@ -44,6 +44,12 @@ export function TodoForm() {
     const onCancel = () => {
         setOpenModal(false)
         setOpenForm(false)
+        clearMensaje()
+    }
+
+    const clearMensaje = () => {
+        setMensaje(false)
+        setMensajeTexto("")
     }
     
     const onChange = (evento) => {

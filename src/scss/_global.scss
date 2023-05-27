@@ -21,6 +21,16 @@ body {
     box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+    background-color: $segundo;
+    width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $cuarto;
+    border-radius: 10px;
+}
+
 @mixin ToDo($color, $color2, $color3) {
     display: grid;
     grid-template-columns: 50px 1fr 50px;

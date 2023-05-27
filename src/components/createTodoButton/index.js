@@ -8,16 +8,31 @@ function CreateTodoButton() {
         openModal,
         setOpenForm,
         openForm,
+        setOpenView,
+        openView,
+        setMensaje,
+        setMensajeTexto,
     } = React.useContext(TodoContext)    
     
     const changeState = () => {
+        if(openView) {
+            setOpenView(false)
+            return
+        }
+
+        if(setOpenForm && setOpenModal) {
+            setMensaje(false)
+            setMensajeTexto("")
+        }
+
         setOpenModal(!openModal)
         setOpenForm(!openForm)
+
     }
 
     return (
         <button
-            className={`newTodo ${openModal ? "activo" : ""}`}
+            className={`newTodo ${openModal || openView ? "activo" : ""}`}
             onClick={changeState} 
             >
             <FaPlus 
