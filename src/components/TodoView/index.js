@@ -6,6 +6,8 @@ export function TodoView() {
         setOpenView,
         todoSelected,
         updateTodo,
+        setMensaje,
+        setMensajeTexto,
     } = React.useContext(TodoContext)
 
     const [openEdit, setOpenEdit] = React.useState(false)
@@ -14,9 +16,8 @@ export function TodoView() {
         description: todoSelected.description,
     })
 
-    const edit = () => {
+    const change = () => {
         setOpenEdit(!openEdit)
-        console.log(todoSelected)
     }
 
     const editTodo = (evento) => {
@@ -28,15 +29,31 @@ export function TodoView() {
 
     const saveChanges = () => {
         if(editedTodo.title === todoSelected.title && editedTodo.description === todoSelected.description) {
-            console.log("No hiciste modificaciones")
+            setMensaje(true)
+            setMensajeTexto("No hiciste modificaciones")
+            return
+        } else if (editedTodo.title.trim() === "") {
+            setMensaje(true)
+            setMensajeTexto("No se pueden crear ToDo's sin titulo")            
             return
         } else {
             updateTodo(todoSelected, editedTodo)
         }
 
-        console.log("Cambios guardados")
+        setMensaje(true)
+        setMensajeTexto("Cambios guardados")
 
         setOpenEdit(false)
+    }
+
+    const onClose = () => {
+        setOpenView(false)
+        clearMensaje()
+    }
+
+    const clearMensaje = () => {
+        setMensaje(false)
+        setMensajeTexto("")
     }
 
     return (
@@ -50,11 +67,11 @@ export function TodoView() {
                 <div>
                     <button
                         className="informacion__botones informacion__botones--close"
-                        onClick={() => setOpenView(false)}
+                        onClick={onClose}
                     >Cerrar</button>
                     <button
                         className="informacion__botones informacion__botones--edit"
-                        onClick={edit}
+                        onClick={change}
                     >Editar</button>
                 </div>
             </div>
@@ -64,6 +81,7 @@ export function TodoView() {
             >
                 <label className="editar__label">Modifica tu ToDo</label>
                 <input 
+                    placeholder="Titulo del ToDo"
                     className="editar__input"
                     value={editedTodo.title}
                     onChange={editTodo}
@@ -71,6 +89,7 @@ export function TodoView() {
                 />
 
                 <textarea 
+                    placeholder="Descripcion (Opcional)"
                     className="editar__textarea"
                     value={editedTodo.description}
                     onChange={editTodo}
@@ -80,7 +99,7 @@ export function TodoView() {
                 <div>
                     <button
                         className="editar__botones editar__botones--close"
-                        onClick={edit}
+                        onClick={change}
                     >Cancelar</button>
                     <button
                         className="editar__botones editar__botones--edit"

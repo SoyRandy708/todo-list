@@ -70,6 +70,7 @@ export function AppUI() {
             {openView && (
                 <Modal>
                     <TodoView />
+                    <Mensaje />
                 </Modal>
             )}
 

@@ -17,6 +17,8 @@ function CreateTodoButton() {
     const changeState = () => {
         if(openView) {
             setOpenView(false)
+            setMensaje(false)
+            setMensajeTexto("")
             return
         }
 
