@@ -24,7 +24,7 @@ function TodoProvider({ children }) {
     const totalTodos = todos.length
     
     const searchedTodos = todos.filter(todo => { 
-        const todoText = todo.title.toLocaleLowerCase()
+        const todoText = todo.title.toLowerCase()
         const searchText = searchValue.toLowerCase()
         return todoText.includes(searchText)
     })
