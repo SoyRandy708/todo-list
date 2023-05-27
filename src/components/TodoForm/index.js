@@ -19,7 +19,7 @@ export function TodoForm() {
     const onSubmit = (evento) => {
         evento.preventDefault()
         
-        if (newTodo.title.trim() === "") {
+        if (newTodo.title.trim().toLowerCase() === "") {
             setMensaje(true)
             setMensajeTexto("No se pueden crear ToDo's sin titulo")
             return
@@ -27,7 +27,7 @@ export function TodoForm() {
 
         const newTodos = [...todos]
         const todoExist = newTodos.some((todo) => 
-            todo.title.trim() === newTodo.title.trim()
+            todo.title.trim().toLowerCase() === newTodo.title.trim().toLowerCase()
         )
         
         if(todoExist) {

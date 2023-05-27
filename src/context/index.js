@@ -17,7 +17,7 @@ function TodoProvider({ children }) {
         saveItem: saveTodos,
         loading,
         error,
-    } = useLocalStorage("TODOS_V1", [])
+    } = useLocalStorage("TODOS", [])
 
     const completedTodos = todos.filter(todo => todo.completed).length
 

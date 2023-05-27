@@ -12,7 +12,7 @@ export function TodoView() {
     return (
         <div className="todo-informacion">
             <h3> {todoSelected.title} </h3>
-            <p> {todoSelected.description} </p>
+            <p> {todoSelected.description || "Sin descripcion"} </p>
 
             <div>
                 <button
