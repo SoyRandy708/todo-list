@@ -7,6 +7,8 @@ function TodoProvider({ children }) {
     const [searchValue, setSearchValue] = React.useState("")
     const [openModal, setOpenModal] = React.useState(false)
     const [openForm, setOpenForm] = React.useState(false)
+    const [openView, setOpenView] = React.useState(false)
+    const [todoSelected, setTodoSelected] = React.useState(null)
     const [mensaje, setMensaje] = React.useState(false)
     const [mensajeTexto, setMensajeTexto] = React.useState("")
 
@@ -26,6 +28,10 @@ function TodoProvider({ children }) {
         const searchText = searchValue.toLowerCase()
         return todoText.includes(searchText)
     })
+
+    const selectedTodo = (todo) => {
+        setTodoSelected(todo)
+    }
     
     const completeTodo = ({title, completed}) => {
         const newTodos = [...todos]
@@ -63,14 +69,19 @@ function TodoProvider({ children }) {
             openModal,
             setOpenForm,
             openForm,
+            setOpenView,
+            openView,
             setMensaje,
             mensaje,
             setMensajeTexto,
             mensajeTexto,
+            setTodoSelected,
+            todoSelected,
             todos,
             totalTodos,
             searchedTodos,
             completedTodos,
+            selectedTodo,
             completeTodo,
             deleteTodo,
             addTodo,

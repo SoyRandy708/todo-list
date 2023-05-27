@@ -1,19 +1,33 @@
+import React from "react";
 import { AiFillDelete, AiFillFileText } from "react-icons/ai"
 import { FaCheck } from "react-icons/fa"
+import { TodoContext } from "../../context";
 
-function TodoItem(props) {
+export function TodoItem(props) {
+  const {
+    setOpenView,
+  } = React.useContext(TodoContext)
+
+  const editIcon = () => {
+    props.onView()
+    setOpenView(true)
+  }
+
+
   return (
     <li
-      className={"tarea"}
+      className={`tarea ${props.completed ? "tarea-completada" : ""}`}
     >
       <FaCheck 
-        className={`icon ${props.completed ? "icon-active" : ""}`}
+        className={`icon icon-active`}
         onClick={props.onComplete}
       />
+
       <AiFillFileText 
-        className={`icon ${props.completed ? "icon-active" : ""}`}
-        onClick={props.onComplete}
+        className={`icon icon-view`}
+        onClick={editIcon}
       />
+
       <p
         className={"texto"}
       >{props.title}</p>
@@ -25,5 +39,3 @@ function TodoItem(props) {
     </li>
   );
 }
-
-export { TodoItem }

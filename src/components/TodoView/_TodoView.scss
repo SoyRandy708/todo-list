@@ -1,0 +1,39 @@
+@use "../../scss/global" as *;
+
+.todo-informacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: clamp(300px, 50%, 500px);
+    height: auto;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: $primero;
+    color: $quinto;
+    font-size: calc(15px + 0.5vw);
+    font-family: $texto;
+
+    h3 {
+        margin: 10px;
+    }
+
+
+    &__botones {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        font-weight: bold;
+        font-size: calc(15px + 0.5vw);
+        font-family: $texto;
+        cursor: pointer;
+
+        &--close {
+            background-color: transparent;
+        }
+
+        &--edit {
+            background-color: #50e5eb;
+        }
+    }
+}

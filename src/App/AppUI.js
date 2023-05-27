@@ -10,6 +10,7 @@ import { TodosError } from '../components/TodosError';
 import { TodosEmpty } from '../components/TodosEmpty';
 import { TodosMatches } from '../components/TodosMatches';
 import { Modal } from '../components/Modal';
+import { TodoView } from '../components/TodoView';
 import { TodoForm } from '../components/TodoForm';
 import { Mensaje } from '../components/Mensaje';
 
@@ -17,11 +18,13 @@ export function AppUI() {
     const {
         totalTodos,
         searchedTodos,
+        selectedTodo,
         completeTodo,
         deleteTodo,
         loading,
         error,
         openForm,
+        openView,
     } = React.useContext(TodoContext)
 
     return (
@@ -44,11 +47,13 @@ export function AppUI() {
                 {searchedTodos.map(todo => (
                     <TodoItem
                         key={todo.title}
+                        todo={todo}
                         title={todo.title}
                         description={todo.description}
                         completed={todo.completed}
                         onComplete={() => completeTodo(todo)}
                         onDelete={() => deleteTodo(todo)}
+                        onView={() => selectedTodo(todo)}
                     />
                 ))}
             </TodoList> 
@@ -59,6 +64,12 @@ export function AppUI() {
                 <Modal>
                     <TodoForm />
                     <Mensaje />
+                </Modal>
+            )}
+
+            {openView && (
+                <Modal>
+                    <TodoView />
                 </Modal>
             )}
 

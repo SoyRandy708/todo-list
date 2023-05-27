@@ -11,12 +11,12 @@
         transition: color 0.3s ease;
     }
 
-    .icon-active {
+    .icon-active:hover {
         color: green;
+    }
 
-        & + p {
-            text-decoration: line-through;
-        }
+    .icon-view:hover {
+        color: $tercero;
     }
     
     .icon-delete:hover {
@@ -30,4 +30,12 @@
     }
 }
 
+.tarea-completada {
+    .icon-active {
+        color: green;
+    }
 
+    p {
+        text-decoration: line-through;
+    }
+}
