@@ -13,7 +13,7 @@ export function Mensaje() {
         const timeout = setTimeout(() => {
             setMensaje(false)
             setMensajeTexto("")
-        }, 3000)
+        }, 2000)
     
         return () => clearTimeout(timeout);
     }, [setMensaje, setMensajeTexto, mensajeTexto])

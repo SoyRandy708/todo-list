@@ -15,11 +15,7 @@
     cursor: pointer;
     transition: transform .5s ease, box-shadow .5s ease;
     
-    &:hover {
-        box-shadow: 0 0 30px $tercero;
-        transform: rotate(225deg);
-    }
-
+    
     
     .icon {
         position: absolute;
@@ -30,6 +26,18 @@
         margin: auto;
         font-size: 40px;
         color: $primero
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            box-shadow: 0 0 30px $tercero;
+            transform: rotate(225deg);
+        }
+    }
+
+    @media (min-width: 900px) {
+        bottom: 50px;
+        right: 50px;
     }
 }
 

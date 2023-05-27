@@ -2,31 +2,37 @@
 
 .tarea {
     @include ToDo(transparent, $tercero, $segundo);
-    grid-template-columns: 50px 30px 1fr 50px;
     box-shadow: 0 0 20px $segundo;
-
+    grid-template-columns: 40px 0px 1fr 40px;
+    
     .icon {
         font-size: 30px;
         cursor: pointer;
         transition: color 0.3s ease;
-    }
-
-    .icon-active:hover {
-        color: green;
-    }
-
-    .icon-view:hover {
-        color: $tercero;
-    }
-    
-    .icon-delete:hover {
-        color: red;
     }
     
     .texto {
         font-size: calc(15px + .5vw);
         font-family: $texto;
         color: $quinto;
+    }
+
+    @media (min-width: 500px) {
+        grid-template-columns: 50px 0px 1fr 50px;
+    }
+
+    @media (hover:hover) {
+        .icon-active:hover {
+            color: green;
+        }
+        
+        .icon-view:hover {
+            color: $tercero;
+        }
+        
+        .icon-delete:hover {
+            color: red;
+        }
     }
 }
 

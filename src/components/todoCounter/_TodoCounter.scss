@@ -2,8 +2,11 @@
 
 h1 {
     font-family: $texto;
-    font-size: calc(10px + 1.5vw);
-    white-space: nowrap;
+    font-size: calc(15px + 1.5vw);
     color: $cuarto;
     text-align: center;
+
+    @media (min-width:700px) {
+        font-size: calc(10px + 2vw);
+    }
 }
