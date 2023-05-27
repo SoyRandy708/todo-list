@@ -1,10 +1,7 @@
 @use "../../scss/global" as *;
 
-.todo-informacion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.previsualizacion {
+    display: block;
     width: clamp(300px, 50%, 500px);
     height: auto;
     padding: 15px;
@@ -13,27 +10,95 @@
     color: $quinto;
     font-size: calc(15px + 0.5vw);
     font-family: $texto;
-
-    h3 {
-        margin: 10px;
-    }
-
-
-    &__botones {
-        padding: 10px 20px;
-        margin: 10px;
-        border: none;
-        font-weight: bold;
-        font-size: calc(15px + 0.5vw);
-        font-family: $texto;
-        cursor: pointer;
-
-        &--close {
-            background-color: transparent;
+    
+    .informacion {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        h3 {
+            margin: 10px;
         }
+    
+    
+        &__botones {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            font-weight: bold;
+            font-size: calc(15px + 0.5vw);
+            font-family: $texto;
+            cursor: pointer;
+    
+            &--close {
+                background-color: transparent;
+            }
+    
+            &--edit {
+                background-color: #50e5eb;
+            }
+        }
+    }
+    
+    .editar {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-        &--edit {
-            background-color: #50e5eb;
+        &__label {
+            font-weight: bold;
+            margin: 10px;
+        }
+        
+        &__input {
+            width: 80%;
+            padding: 10px;
+            font-size: calc(15px + 0.5vw);
+            font-family: $texto;
+            border: 3px solid #767676;
+    
+            &:focus {
+                outline: none;
+                border: 3px solid $tercero;
+            }
+        }
+    
+        &__textarea {
+            width: 80%;
+            height: 150px;
+            margin: 10px;
+            padding: 10px;
+            resize: none;
+            text-align: center;
+            font-size: calc(15px + 0.5vw);
+            font-family: $texto;
+            border: 3px solid #767676;
+    
+            &:focus {
+                outline: none;
+                border: 3px solid $tercero;
+            }
+        }
+    
+    
+        &__botones {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            font-weight: bold;
+            font-size: calc(15px + 0.5vw);
+            font-family: $texto;
+            cursor: pointer;
+    
+            &--close {
+                background-color: transparent;
+            }
+    
+            &--edit {
+                background-color: #50e5eb;
+            }
         }
     }
 }

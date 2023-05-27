@@ -61,6 +61,18 @@ function TodoProvider({ children }) {
         saveTodos(newTodos)
     }
 
+    const updateTodo = (todoOld, todoNew) => {
+        const newTodos = [...todos]
+        const index = newTodos.findIndex(todo => {
+            return todo === todoOld
+        })
+
+        newTodos[index].title = todoNew.title
+        newTodos[index].description = todoNew.description
+        
+        saveTodos(newTodos)
+    }
+
     return (
         <TodoContext.Provider value={{
             setSearchValue,
@@ -85,6 +97,7 @@ function TodoProvider({ children }) {
             completeTodo,
             deleteTodo,
             addTodo,
+            updateTodo,
             loading,
             error,
         }}>
