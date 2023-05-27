@@ -19,6 +19,19 @@
         margin: 10px;
     }
 
+    &__input {
+        width: 80%;
+        padding: 5px;
+        font-size: calc(15px + 0.5vw);
+        font-family: $texto;
+        border: 3px solid #767676;
+
+        &:focus {
+            outline: none;
+            border: 3px solid $tercero;
+        }
+    }
+
     &__textarea {
         width: 80%;
         height: 150px;

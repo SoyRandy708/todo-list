@@ -1,29 +1,27 @@
 @use "../../scss/global" as *;
 
 .mensaje {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include ToDo($tercero, $tercero, $tercero);
+    grid-template-columns: 1fr;
+    box-shadow: none;
     position: fixed;
     z-index: 10;
-    bottom: -150px;
+    top: -150px;
     left: 0;
     right: 0;
     margin: auto;
     width: clamp(200px, 50%, 400px);
     height: auto;
-    border-radius: 100px;
-    background-color: $tercero;
     transition: transform .5s ease;
 
     p {
-        text-align: center;
+        font-size: calc(15px + .5vw);
+        font-weight: bold;
         font-family: $texto;
-        font-size: calc(15px + 1vw);
-        color: black;
+        color: $quinto;
     }
 }
 
 .mostrar {
-    transform: translateY(-160px);
+    transform: translateY(160px);
 }

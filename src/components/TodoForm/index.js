@@ -21,7 +21,7 @@ export function TodoForm() {
         
         if (newTodo.title.trim() === "") {
             setMensaje(true)
-            setMensajeTexto("No se pueden crear ToDo's vacíos")
+            setMensajeTexto("No se pueden crear ToDo's sin titulo")
             return
         }
 
@@ -62,7 +62,7 @@ export function TodoForm() {
 
             <input 
                 className="TodoForm__input"
-                placeholder="Agrega un titulo a tu ToDo"
+                placeholder="Titulo del ToDo"
                 name="title"
                 value={newTodo.title}
                 onChange={onChange}
