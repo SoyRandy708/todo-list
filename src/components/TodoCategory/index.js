@@ -3,6 +3,7 @@ import { TodoContext } from "../../context"
 
 export function TodoCategory() {
     const {
+        categorySelected,
         setCategorySelected
     } = React.useContext(TodoContext)
 
@@ -12,26 +13,28 @@ export function TodoCategory() {
 
     const verCompletados = () => {
         setCategorySelected("COMPLETADOS")
+
     }
 
     const verPendientes = () => {
         setCategorySelected("PENDIENTES")
+
     }
 
     return (
         <div className="todo__category">
             <button
-                className="todo__category__button"
+                className={`todo__category__button ${categorySelected === "TODOS" ? "selected" : ""}`}
                 onClick={verTodos}
-            >VER TODOS</button>
+            >TODOS</button>
             <button
-                className="todo__category__button"
+                className={`todo__category__button ${categorySelected === "COMPLETADOS" ? "selected" : ""}`}
                 onClick={verCompletados}
-            >VER COMPLETADOS</button>
+            >COMPLETADOS</button>
             <button
-                className="todo__category__button"
+                className={`todo__category__button ${categorySelected === "PENDIENTES" ? "selected" : ""}`}
                 onClick={verPendientes}
-            >VER PENDIENTES</button>
+            >PENDIENTES</button>
         </div>
     )
 }

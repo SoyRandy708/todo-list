@@ -98,6 +98,7 @@ function TodoProvider({ children }) {
             setTodoSelected,
             todoSelected,
             setCategorySelected,
+            categorySelected,
             todos,
             totalTodos,
             searchedTodos,
