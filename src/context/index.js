@@ -5,6 +5,7 @@ const TodoContext = React.createContext()
 
 function TodoProvider({ children }) {
     const [searchValue, setSearchValue] = React.useState("")
+    const [categorySelected, setCategorySelected] = React.useState("TODOS");
     const [openModal, setOpenModal] = React.useState(false)
     const [openForm, setOpenForm] = React.useState(false)
     const [openView, setOpenView] = React.useState(false)
@@ -26,7 +27,14 @@ function TodoProvider({ children }) {
     const searchedTodos = todos.filter(todo => { 
         const todoText = todo.title.toLowerCase()
         const searchText = searchValue.toLowerCase()
-        return todoText.includes(searchText)
+        
+        if(categorySelected === "COMPLETADOS" && todoText.includes(searchText)) {
+            return todo.completed 
+        } else if(categorySelected === "PENDIENTES" && todoText.includes(searchText)) { 
+            return !todo.completed
+        } else {
+            return todoText.includes(searchText)
+        }
     })
 
     const selectedTodo = (todo) => {
@@ -89,6 +97,7 @@ function TodoProvider({ children }) {
             mensajeTexto,
             setTodoSelected,
             todoSelected,
+            setCategorySelected,
             todos,
             totalTodos,
             searchedTodos,

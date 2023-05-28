@@ -2,6 +2,7 @@ import React from 'react';
 import { TodoContext } from '../context';
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
+import { TodoCategory } from "../components/TodoCategory" ;
 import { TodoList } from '../components/TodoList';
 import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodoButton';
@@ -31,6 +32,7 @@ export function AppUI() {
         <React.Fragment>
             <TodoCounter />
             <TodoSearch />
+            <TodoCategory />
 
             <TodoList>
                 {loading && (

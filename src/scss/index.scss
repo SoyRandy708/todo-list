@@ -1,6 +1,7 @@
 @use "./global";
 @use "../components/TodoCounter/TodoCounter";
 @use "../components/TodoSearch/TodoSearch";
+@use "../components/TodoCategory/TodoCategory";
 @use "../components/TodoList/TodoList";
 @use "../components/TodoItem/TodoItem";
 @use "../components/CreateTodoButton/CreateTodoButton";

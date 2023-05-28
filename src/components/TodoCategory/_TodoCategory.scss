@@ -1,0 +1,29 @@
+@use "../../scss/global" as *;
+
+.todo__category {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    &__button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        background-color: $segundo;
+        color: $quinto;
+        font-family: $texto;
+        font-size: calc(10px + .5vw);
+        transition: transform .3s ease, box-shadow .3s ease;
+
+        &:active {
+            box-shadow: 0 0 10px $tercero;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
