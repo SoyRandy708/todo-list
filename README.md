@@ -14,8 +14,8 @@ Para el proyecto se utilizo React para la organizacion de componentes con uso de
 https://soyrandy708.github.io/ToDo-List/
 
 <p align="center">
-    <img alt="Imagen de Calculadora" width="80%" src="./src/img/todo-list-1.webp">
-    <img alt="Imagen de Calculadora" width="80%" src="./src/img/todo-list-2.webp">
-    <img alt="Imagen de Calculadora" width="80%" src="./src/img/todo-list-3.webp">
-    <img alt="Imagen de Calculadora" width="80%" src="./src/img/todo-list-4.webp">
+    <img alt="Imagen de Calculadora" width="80%" src="https://pub-f2166e82e8a447aca3e1787fac4b59bd.r2.dev/todolist%2Ftodo-list-1.webp">
+    <img alt="Imagen de Calculadora" width="80%" src="https://pub-f2166e82e8a447aca3e1787fac4b59bd.r2.dev/todolist%2Ftodo-list-2.webp">
+    <img alt="Imagen de Calculadora" width="80%" src="https://pub-f2166e82e8a447aca3e1787fac4b59bd.r2.dev/todolist%2Ftodo-list-3.webp">
+    <img alt="Imagen de Calculadora" width="80%" src="https://pub-f2166e82e8a447aca3e1787fac4b59bd.r2.dev/todolist%2Ftodo-list-4.webp">
 </p>
