@@ -1,7 +1,7 @@
 import React from "react";
 import { TodoContext } from "../../context";
 
-export function TodoCounter() {
+export function TodoCounter () {
     const {
         completedTodos,
         totalTodos
@@ -9,9 +9,9 @@ export function TodoCounter() {
 
     let componeneteRenderizado
 
-    if(totalTodos === 0) {
+    if (totalTodos === 0) {
         componeneteRenderizado = <h1>ToDo List</h1>
-    } else if(totalTodos === completedTodos) {
+    } else if (totalTodos === completedTodos) {
         componeneteRenderizado = <h1>!Felicidades has completado todas las tareas!</h1>
 
     } else {

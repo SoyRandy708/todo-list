@@ -1,4 +1,4 @@
-function TodoList({ children }) {
+function TodoList ({ children }) {
   return (
     <ul>
       {children}

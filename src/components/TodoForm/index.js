@@ -1,7 +1,7 @@
 import React from "react"
 import { TodoContext } from "../../context"
 
-export function TodoForm() {
+export function TodoForm () {
     const {
         setOpenForm,
         setOpenModal,
@@ -15,10 +15,10 @@ export function TodoForm() {
         title: "",
         description: "",
     })
-    
+
     const onSubmit = (evento) => {
         evento.preventDefault()
-        
+
         if (newTodo.title.trim().toLowerCase() === "") {
             setMensaje(true)
             setMensajeTexto("No se pueden crear ToDo's sin titulo")
@@ -26,11 +26,11 @@ export function TodoForm() {
         }
 
         const newTodos = [...todos]
-        const todoExist = newTodos.some((todo) => 
+        const todoExist = newTodos.some((todo) =>
             todo.title.trim().toLowerCase() === newTodo.title.trim().toLowerCase()
         )
-        
-        if(todoExist) {
+
+        if (todoExist) {
             setMensaje(true)
             setMensajeTexto("No se pueden crear ToDo's duplicados")
             return
@@ -51,7 +51,7 @@ export function TodoForm() {
         setMensaje(false)
         setMensajeTexto("")
     }
-    
+
     const onChange = (evento) => {
         setNewTodo({
             ...newTodo,
@@ -60,13 +60,13 @@ export function TodoForm() {
     }
 
     return (
-        <form 
-            className="TodoForm" 
+        <form
+            className="TodoForm"
             onSubmit={onSubmit}
         >
             <label className="TodoForm__label">Escribe tu nuevo ToDo</label>
 
-            <input 
+            <input
                 className="TodoForm__input"
                 placeholder="Titulo del ToDo"
                 name="title"
@@ -74,8 +74,8 @@ export function TodoForm() {
                 onChange={onChange}
             />
 
-            <textarea 
-                className="TodoForm__textarea" 
+            <textarea
+                className="TodoForm__textarea"
                 placeholder="Descripcion (Opcional)"
                 name="description"
                 value={newTodo.description}

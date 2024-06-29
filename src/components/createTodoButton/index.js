@@ -2,7 +2,7 @@ import React from "react";
 import { TodoContext } from "../../context";
 import { FaPlus } from "react-icons/fa"
 
-function CreateTodoButton() {
+function CreateTodoButton () {
     const {
         setOpenModal,
         openModal,
@@ -12,17 +12,17 @@ function CreateTodoButton() {
         openView,
         setMensaje,
         setMensajeTexto,
-    } = React.useContext(TodoContext)    
-    
+    } = React.useContext(TodoContext)
+
     const changeState = () => {
-        if(openView) {
+        if (openView) {
             setOpenView(false)
             setMensaje(false)
             setMensajeTexto("")
             return
         }
 
-        if(setOpenForm && setOpenModal) {
+        if (setOpenForm && setOpenModal) {
             setMensaje(false)
             setMensajeTexto("")
         }
@@ -35,9 +35,9 @@ function CreateTodoButton() {
     return (
         <button
             className={`newTodo ${openModal || openView ? "activo" : ""}`}
-            onClick={changeState} 
-            >
-            <FaPlus 
+            onClick={changeState}
+        >
+            <FaPlus
                 className="icon"
             />
         </button>

@@ -1,7 +1,7 @@
 import React from "react"
 import { TodoContext } from "../../context"
 
-export function TodoCategory() {
+export function TodoCategory () {
     const {
         categorySelected,
         setCategorySelected

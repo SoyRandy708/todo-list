@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { TodoContext } from "../../context"
 
-export function Mensaje() {
+export function Mensaje () {
     const {
         setMensaje,
         mensaje,
@@ -14,7 +14,7 @@ export function Mensaje() {
             setMensaje(false)
             setMensajeTexto("")
         }, 2000)
-    
+
         return () => clearTimeout(timeout);
     }, [setMensaje, setMensajeTexto, mensajeTexto])
 

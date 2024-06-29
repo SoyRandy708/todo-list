@@ -2,17 +2,17 @@ import React from "react";
 /* eslint-disable react-hooks/exhaustive-deps */
 
 
-export function useLocalStorage(itemName, initialValue) {
+export function useLocalStorage (itemName, initialValue) {
   const [item, setItem] = React.useState(initialValue);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
 
-  
+
   React.useEffect(() => {
     try {
       const localStorageItem = localStorage.getItem(itemName);
       let parsedItem;
-  
+
       if (!localStorageItem) {
         localStorage.setItem(itemName, JSON.stringify(initialValue));
         parsedItem = initialValue;
@@ -20,9 +20,9 @@ export function useLocalStorage(itemName, initialValue) {
         parsedItem = JSON.parse(localStorageItem);
         setItem(parsedItem)
       }
-  
+
       setLoading(false)
-    } catch(error) {
+    } catch (error) {
       setLoading(false)
       setError(true)
     }
@@ -35,9 +35,9 @@ export function useLocalStorage(itemName, initialValue) {
   };
 
   return {
-    item, 
-    saveItem, 
-    loading, 
+    item,
+    saveItem,
+    loading,
     error
   };
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { TodoContext } from '../context';
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
-import { TodoCategory } from "../components/TodoCategory" ;
+import { TodoCategory } from "../components/TodoCategory";
 import { TodoList } from '../components/TodoList';
 import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodoButton';
@@ -15,7 +15,7 @@ import { TodoView } from '../components/TodoView';
 import { TodoForm } from '../components/TodoForm';
 import { Mensaje } from '../components/Mensaje';
 
-export function AppUI() {
+export function AppUI () {
     const {
         totalTodos,
         searchedTodos,
@@ -58,10 +58,10 @@ export function AppUI() {
                         onView={() => selectedTodo(todo)}
                     />
                 ))}
-            </TodoList> 
+            </TodoList>
 
             <CreateTodoButton />
-            
+
             {openForm && (
                 <Modal>
                     <TodoForm />

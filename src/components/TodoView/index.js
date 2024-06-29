@@ -1,7 +1,7 @@
 import React from "react"
 import { TodoContext } from "../../context"
 
-export function TodoView() {
+export function TodoView () {
     const {
         setOpenView,
         todoSelected,
@@ -28,13 +28,13 @@ export function TodoView() {
     }
 
     const saveChanges = () => {
-        if(editedTodo.title === todoSelected.title && editedTodo.description === todoSelected.description) {
+        if (editedTodo.title === todoSelected.title && editedTodo.description === todoSelected.description) {
             setMensaje(true)
             setMensajeTexto("No hiciste modificaciones")
             return
         } else if (editedTodo.title.trim() === "") {
             setMensaje(true)
-            setMensajeTexto("No se pueden crear ToDo's sin titulo")            
+            setMensajeTexto("No se pueden crear ToDo's sin titulo")
             return
         } else {
             updateTodo(todoSelected, editedTodo)
@@ -58,7 +58,7 @@ export function TodoView() {
 
     return (
         <div className="previsualizacion">
-            <div 
+            <div
                 className="informacion" style={{ display: openEdit ? "none" : "flex" }}
             >
                 <h3> {todoSelected.title} </h3>
@@ -76,11 +76,11 @@ export function TodoView() {
                 </div>
             </div>
 
-            <div 
+            <div
                 className="editar" style={{ display: openEdit ? "flex" : "none" }}
             >
                 <label className="editar__label">Modifica tu ToDo</label>
-                <input 
+                <input
                     placeholder="Titulo del ToDo"
                     className="editar__input"
                     value={editedTodo.title}
@@ -88,7 +88,7 @@ export function TodoView() {
                     name="title"
                 />
 
-                <textarea 
+                <textarea
                     placeholder="Descripcion (Opcional)"
                     className="editar__textarea"
                     value={editedTodo.description}

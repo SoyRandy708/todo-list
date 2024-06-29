@@ -3,7 +3,7 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const TodoContext = React.createContext()
 
-function TodoProvider({ children }) {
+function TodoProvider ({ children }) {
     const [searchValue, setSearchValue] = React.useState("")
     const [categorySelected, setCategorySelected] = React.useState("TODOS");
     const [openModal, setOpenModal] = React.useState(false)
@@ -23,14 +23,14 @@ function TodoProvider({ children }) {
     const completedTodos = todos.filter(todo => todo.completed).length
 
     const totalTodos = todos.length
-    
-    const searchedTodos = todos.filter(todo => { 
+
+    const searchedTodos = todos.filter(todo => {
         const todoText = todo.title.toLowerCase()
         const searchText = searchValue.toLowerCase()
-        
-        if(categorySelected === "COMPLETADOS" && todoText.includes(searchText)) {
-            return todo.completed 
-        } else if(categorySelected === "PENDIENTES" && todoText.includes(searchText)) { 
+
+        if (categorySelected === "COMPLETADOS" && todoText.includes(searchText)) {
+            return todo.completed
+        } else if (categorySelected === "PENDIENTES" && todoText.includes(searchText)) {
             return !todo.completed
         } else {
             return todoText.includes(searchText)
@@ -40,8 +40,8 @@ function TodoProvider({ children }) {
     const selectedTodo = (todo) => {
         setTodoSelected(todo)
     }
-    
-    const completeTodo = ({title, completed}) => {
+
+    const completeTodo = ({ title, completed }) => {
         const newTodos = [...todos]
         const todoIndex = newTodos.findIndex(
             (todo) => todo.title === title
@@ -49,8 +49,8 @@ function TodoProvider({ children }) {
         newTodos[todoIndex].completed = !completed
         saveTodos(newTodos)
     }
-    
-    const deleteTodo = ({title}) => {
+
+    const deleteTodo = ({ title }) => {
         const newTodos = [...todos]
         const todoIndex = newTodos.findIndex(
             (todo) => todo.title === title
@@ -59,7 +59,7 @@ function TodoProvider({ children }) {
         saveTodos(newTodos)
     }
 
-    const addTodo = ({title, description}) => {
+    const addTodo = ({ title, description }) => {
         const newTodos = [...todos]
         newTodos.push({
             title,
@@ -77,7 +77,7 @@ function TodoProvider({ children }) {
 
         newTodos[index].title = todoNew.title
         newTodos[index].description = todoNew.description
-        
+
         saveTodos(newTodos)
     }
 

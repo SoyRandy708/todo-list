@@ -1,4 +1,4 @@
-export function TodosError() {
+export function TodosError () {
     return (
         <div className="error-Todo">
             <span></span>

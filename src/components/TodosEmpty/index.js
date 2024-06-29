@@ -1,4 +1,4 @@
-export function TodosEmpty() {
+export function TodosEmpty () {
     return (
         <div className="empty-Todo">
             <span></span>
